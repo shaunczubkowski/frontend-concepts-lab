@@ -1,0 +1,16 @@
+@import "../assets/styles/global.css";
+
+ul li {
+  margin: 15px auto;
+}
+
+#todo-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#todo-list li {
+  &:hover {
+    cursor: pointer;
+  }
+}
