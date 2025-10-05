@@ -41,46 +41,59 @@
         </li>
       </ul>
     </section>
-    <nav>
-      <h4>Examples:</h4>
-      <ul>
-        <li><a href="#basic-example">Basic</a></li>
-      </ul>
-    </nav>
+
     <section id="basic-example">
-      <h2>Basic Example</h2>
+      <h2>Event Delegation In Action</h2>
+      <p>
+        In this example, we have a list of items. Instead of attaching an event
+        listener to each individual item, we attach a single event listener to
+        the <code>ul</code> parent element. This listener can handle events for
+        all current and future list items.
+      </p>
+      <p>
+        Thanks to event delegation, when you add a new item to the list, it is
+        automatically covered by the existing event listener on the parent
+        element. You do not need to add a separate event listener for each new
+        item.
+      </p>
       <hr />
       <div class="section-wrapper">
         <div>
           <h3>List of Items</h3>
-          <ul id="todo-list">
-            <li id="item-1" data-id="1">Buy milk</li>
-            <li data-id="2">Walk dog</li>
-            <li data-id="3">Write code</li>
-            <li data-id="4">Read a book</li>
-            <li data-id="5">Call mom</li>
-            <li data-id="6">Clean kitchen</li>
-            <li data-id="7">Go for a run</li>
-            <li data-id="8">Feed the cat</li>
-            <li data-id="9">Water plants</li>
-            <li data-id="10">Check emails</li>
-            <li data-id="11">Plan vacation</li>
-            <li data-id="12">Pay bills</li>
-            <li data-id="13">Organize desk</li>
-            <li data-id="14">Meditate</li>
-            <li data-id="15">Cook dinner</li>
-            <li data-id="16">Practice guitar</li>
-            <li data-id="17">Update resume</li>
-            <li data-id="18">Watch tutorial</li>
-            <li data-id="19">Schedule meeting</li>
-            <li data-id="20">Backup files</li>
-          </ul>
+          <div class="add-new-item">
+            <input
+              type="text"
+              id="add-new-item-input"
+              placeholder="Ex: Journal"
+              id="add-new-item-input"
+            />
+            <button type="button" id="add-new-item-button">Add Item</button>
+          </div>
+          <ul id="todo-list"></ul>
         </div>
 
         <div class="event-log">
           <h3>Event Log</h3>
           <p id="event-log-content"></p>
-          <button type="button" id="resetButton">Reset</button>
+          <button type="button" id="clear-button">Clear</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="performance-test">
+      <h2>Performance Test</h2>
+
+      <hr />
+      <div class="section-wrapper">
+        <div>
+          <label for="add-listeners-to-each-item">
+            Add listener to each item
+            <input type="checkbox" id="add-listeners-to-each-item" />
+          </label>
+          <button id="generate-items">Generate 10K Items</button>
+        </div>
+        <div style="height: 300px; overflow-y: scroll">
+          <ul id="list"></ul>
         </div>
       </div>
     </section>
