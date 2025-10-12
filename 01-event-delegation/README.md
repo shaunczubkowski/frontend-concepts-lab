@@ -20,5 +20,3 @@
 - Lots of similar child nodes (lists, tables, grids)
 - Dynamic children added/removed after initial render
 - Performance/simplicity: fewer listeners in memory
-
-TODO: Cover `stopPropagation()`, `once` attribute, `capture`

@@ -69,31 +69,3 @@ function logEvent(message) {
     "event-log-content"
   ).innerHTML += `${now} - ${message}<br/>`;
 }
-
-// Performance Test
-const generateItems = document.getElementById("generate-items");
-const performanceTestList = document.getElementById("list");
-const addListenersToEachItem = document.getElementById(
-  "add-listeners-to-each-item"
-);
-
-generateItems.addEventListener("click", runTestOne);
-
-function runTestOne() {
-  const ITEM_COUNT = 10000;
-  const items = [];
-
-  for (i = 1; i <= ITEM_COUNT; i++) {
-    const itemValue = `item ${i}`;
-    items.push(itemValue);
-    const listItem = generateItemWithDelete(itemValue);
-
-    if (addListenersToEachItem.checked) {
-      listItem.addEventListener("click", () =>
-        console.log(`${itemValue} clicked`)
-      );
-    }
-
-    performanceTestList.insertAdjacentElement("beforeend", listItem);
-  }
-}
